@@ -30,6 +30,19 @@ DLPはLISM、CASBとは別のサーバにインストールして下さい。
 githubのpackages/secioss-dlp-1.x.x-x.x86_64.tar.gzを展開して、インストールスクリプト(install.sh)を実行して下さい。  
 `# ./isntall.sh install`
 
+### データベースのインストール
+DLPの検出情報を登録するデータベースを作成します。MariaDBをインストールして、データベースdlpに以下のテーブルを作成して下さい。
+~~~
+CREATE TABLE `dlp_alert` (
+  `datetime` char(19) DEFAULT NULL,
+  `tenant` varchar(80) DEFAULT NULL,
+  `uid` varchar(130) DEFAULT NULL,
+  `service` varchar(64) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `msg` text
+)
+~~~
+
 ## 設定
 ### CASB
 CASBでは、管理画面で設定した各クラウドサービスのAPI接続情報を使用してアクティビティログを収集します。
@@ -57,7 +70,7 @@ keyfile = /usr/share/secioss-dlp/conf/auth_tkt.conf
 db_host = <DBサーバーのホスト名>
 db_user = <DBサーバーに接続するユーザー>
 db_password = <DBサーバーに接続するパスワード>
-db_name = <データベース名>
+db_name = dlp
 
 [dlp]
 class =GCP
