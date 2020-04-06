@@ -79,3 +79,19 @@ credentials = <DLP APIに接続するcredentialファイル>
 projectid = <DLP APIに接続するプロジェクトID>
 ```
 /usr/share/secioss-dlp/conf/auth_tkt.confのTKTAuthSecretにCASBの/opt/secioss/etc/auth_tkt.confに設定した値と同じ値を設定して下さい。
+
+## クラウドサービスの設定
+LISMのWeコンソールからCASBの対象とするクラウドサービスの設定を行います。
+### CASB
+
+### DLP
+[DLP]-[ストレージ]からクラウドサービスを選択して、設定を行います。
+#### Amazon S3
+
+#### Box
+
+#### Dropbox
+
+#### Google Drive
+
+#### OneDrive
