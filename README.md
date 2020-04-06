@@ -45,7 +45,7 @@ CREATE TABLE `dlp_alert` (
 
 ## 設定
 ### CASB
-CASBでは、管理画面で設定した各クラウドサービスのAPI接続情報を使用してアクティビティログを収集します。
+CASBでは、管理コンソールで設定した各クラウドサービスのAPI接続情報を使用してアクティビティログを収集します。
 設定ファイル/opt/secioss/etc/service_auditlog.confを環境に合わせて変更して下さい。
 ```
 ldap_uri = <LISMのLDAPサーバーのURI>
@@ -81,7 +81,7 @@ projectid = <DLP APIに接続するプロジェクトID>
 /usr/share/secioss-dlp/conf/auth_tkt.confのTKTAuthSecretにCASBの/opt/secioss/etc/auth_tkt.confに設定した値と同じ値を設定して下さい。
 
 ## クラウドサービスの設定
-LISMのWeコンソールからCASBの対象とするクラウドサービスの設定を行います。
+LISMの管理コンソールからCASBの対象とするクラウドサービスの設定を行います。
 ### CASB
 
 ### DLP
@@ -118,4 +118,4 @@ DLPの検査は以下のコマンドを実行して下さい。
 ```
 # php /usr/share/secioss-dlp/bin/dlp_check.php
 ```
-検査結果は、LISMのWebコンソールの[DLP]-[機密データ検出]から確認することができます。
+検査結果は、LISMの管理コンソールの[DLP]-[機密データ検出]から確認することができます。
