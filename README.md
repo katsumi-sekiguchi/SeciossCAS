@@ -29,13 +29,16 @@ githubのpackages/secioss-dlp-1.x.x-x.x86_64.tar.gzを展開して、インス�
 
 ## 設定
 ### CASB
+
 ### DLP
+DLPでは、Google Cloud PlatformのDLP APIを使用します。
 設定ファイル/usr/share/secioss-dlp/conf/config.iniを環境に合わせて変更して下さい。
 ```
 uri = <LISMのLDAPサーバーのURI>
 binddn = <LISMのLDAPサーバーに接続するDN>
 bindpw = <LISMのLDAPサーバーに接続するパスワード>
 basedn = <LISMのLDAPサーバーのベースDN>
+keyfile = /usr/share/secioss-dlp/conf/auth_tkt.conf
 db_host = <DBサーバーのホスト名>
 db_user = <DBサーバーに接続するユーザー>
 db_password = <DBサーバーに接続するパスワード>
