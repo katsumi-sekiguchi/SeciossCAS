@@ -115,5 +115,7 @@ LISMのWeコンソールからCASBの対象とするクラウドサービスの�
 
 ### DLP
 DLPの検査は以下のコマンドを実行して下さい。
-`# php /usr/share/secioss-dlp/bin/dlp_check.php`
+```
+# php /usr/share/secioss-dlp/bin/dlp_check.php
+```
 検査結果は、LISMのWebコンソールの[DLP]-[機密データ検出]から確認することができます。
