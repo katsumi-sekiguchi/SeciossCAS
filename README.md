@@ -21,6 +21,9 @@ Secioss CAS(Cloud App Security)は、以下の機能を提供するオープン�
 LISMのインストールについては、こちら( https://github.com/SeciossOpenSource/LISM )の手順をご覧下さい。
 
 ### CASBのインストール
+CASBはLISMと同じサーバーにインストールして下さい。
+githubのpackages/secioss-auditlog-1.x.x-x.x86_64.tar.gzを展開して、インストールスクリプト(install.sh)を実行して下さい。  
+`# ./isntall.sh install`
 
 ### DLPのインストール
 DLPはLISM、CASBとは別のサーバにインストールして下さい。
@@ -29,6 +32,18 @@ githubのpackages/secioss-dlp-1.x.x-x.x86_64.tar.gzを展開して、インス�
 
 ## 設定
 ### CASB
+CASBでは、管理画面で設定した各クラウドサービスのAPI接続情報を使用してアクティビティログを収集します。
+設定ファイル/opt/secioss/etc/service_auditlog.confを環境に合わせて変更して下さい。
+```
+ldap_uri = <LISMのLDAPサーバーのURI>
+ldap_user = <LISMのLDAPサーバーに接続するDN>
+ldap_password = <LISMのLDAPサーバーに接続するパスワード>
+ldap_basedn = <LISMのLDAPサーバーのベースDN>
+
+elasticsearch_url  = <アクティビティログ保管用ElasticsearchサーバーのURL>
+
+decrypt_key = "/etc/httpd/conf.d/auth_tkt.conf"
+```
 
 ### DLP
 DLPでは、Google Cloud PlatformのDLP APIを使用します。
