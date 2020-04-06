@@ -55,8 +55,9 @@ ldap_basedn = <LISMのLDAPサーバーのベースDN>
 
 elasticsearch_url  = <アクティビティログ保管用ElasticsearchサーバーのURL>
 
-decrypt_key = "/etc/httpd/conf.d/auth_tkt.conf"
+decrypt_key = "/opt/secioss/etc/auth_tkt.conf"
 ```
+次に、/opt/secioss/etc/auth_tkt.confのTKTAuthSecretの値をランダムな文字列に書き換えて下さい。
 
 ### DLP
 DLPでは、Google Cloud PlatformのDLP APIを使用します。
@@ -77,3 +78,4 @@ class =GCP
 credentials = <DLP APIに接続するcredentialファイル>
 projectid = <DLP APIに接続するプロジェクトID>
 ```
+/usr/share/secioss-dlp/conf/auth_tkt.confのTKTAuthSecretにCASBの/opt/secioss/etc/auth_tkt.confに設定した値と同じ値を設定して下さい。
