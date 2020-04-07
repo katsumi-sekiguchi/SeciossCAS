@@ -19,6 +19,7 @@ Secioss CAS(Cloud App Security)は、以下の機能を提供するオープン�
 ### LISMのインストール
 管理コンソールは、LISMパッケージに含まれていますので、まずLISMをインストールして下さい。
 LISMのインストールについては、こちら( https://github.com/SeciossOpenSource/LISM )の手順をご覧下さい。
+インストール後、/usr/share/seciossadmin/etc/secioss-ini.phpの/* CASB ... */で囲まれた個所のコメントアウトを外して下さい。
 
 ### CASBのインストール
 CASBはLISMと同じサーバーにインストールして下さい。
