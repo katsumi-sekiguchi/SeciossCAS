@@ -32,7 +32,22 @@ githubのpackages/secioss-dlp-1.x.x-x.x86_64.tar.gzを展開して、インス�
 `# ./isntall.sh install`
 
 ### データベースのインストール
-DLPの検出情報を登録するデータベースを作成します。MariaDBをインストールして、データベースdlpに以下のテーブルを作成して下さい。
+アクティビティログのグラフ用の情報を登録するデータベースを作成します。MariaDBをインストールしてデータベースreportに以下のテーブルを作成して下さい。
+~~~
+CREATE TABLE IF NOT EXISTS activity_info (
+      tenant varchar(64) NOT NULL,
+      date datetime NOT NULL,
+      service varchar(129) NOT NULL,
+      activity varchar(32) NOT NULL,
+      country_code varchar(3) NOT NULL,
+      domain varchar(64) NOT NULL,
+      longitude varchar(10) DEFAULT NULL,
+      latitude varchar(10) DEFAULT NULL,
+      number int(10) DEFAULT NULL,
+      PRIMARY KEY (tenant,date,service,activity,country_code,domain)
+)
+~~~      
+DLPの検出情報を登録するデータベースを作成します。データベースdlpに以下のテーブルを作成して下さい。
 ~~~
 CREATE TABLE `dlp_alert` (
   `datetime` char(19) DEFAULT NULL,
