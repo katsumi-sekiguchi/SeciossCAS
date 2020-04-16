@@ -14,7 +14,7 @@ Secioss CAS(Cloud App Security)は、以下の機能を提供するオープン�
 ## インストール
 ### 環境
 * OS：CentOS 7
-* ミドルウェア：Apache、OpenLDAP、PHP、MariaDB
+* ミドルウェア：Apache、OpenLDAP、PHP、MariaDB、Elasticsearch
 
 ### LISMのインストール
 管理コンソールは、LISMパッケージに含まれていますので、まずLISMをインストールして下さい。
@@ -58,6 +58,19 @@ CREATE TABLE `dlp_alert` (
   `msg` text
 )
 ~~~
+### Elasticsearchのインストール
+`# yum -y install java-11-openjdk-devel`
+`# cat > /etc/yum.repos.d/elasticsearch.repo <<EOF
+[elasticsearch-7.x]
+name=Elasticsearch repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+EOF`
+`# yum -y install elasticsearch`
 
 ## 設定
 ### CASB
