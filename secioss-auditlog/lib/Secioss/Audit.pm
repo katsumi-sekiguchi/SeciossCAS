@@ -80,9 +80,9 @@ sub currentTime
         $epoch += $time_diff * 3600;
     }
     if (defined($gmt) && $gmt) {
-        ($sec, $min, $hour, $mday, $mon, $year) = $self->getGMDateTime($epoch);
+        ($year, $mon, $mday, $hour, $min, $sec) = $self->getGMDateTime($epoch);
     } else {
-        ($sec, $min, $hour, $mday, $mon, $year) = $self->getDateTime($epoch);
+        ($year, $mon, $mday, $hour, $min, $sec) = $self->getDateTime($epoch);
     }
 
     return sprintf("%04d%02d%02d%02d%02d%02d%06d", $year, $mon, $mday, $hour, $min, $sec, $micro);
