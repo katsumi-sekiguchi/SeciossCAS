@@ -105,6 +105,13 @@ LISMの管理コンソールからCASBの対象とするクラウドサービス
 APIにアクセスするAWSのIAMユーザーの設定を行います。
 * アクセスキー：IAMユーザーのアクセスキー
 * シークレットキー：IAMユーザーのシークレットキー
+
+※IAMに以下の権限を付与します。
+
+* AmazonEC2ReadOnlyAccess
+* AmazonVPCReadOnlyAccess
+* IAMReadOnlyAccess
+* AmazonRDSReadOnlyAccess
 #### Box
 APIにアクセスするカスタムアプリの設定を行います。
 * クライアントID：アプリのクライアントID
@@ -112,11 +119,31 @@ APIにアクセスするカスタムアプリの設定を行います。
 #### Dropbox
 APIにアクセスするDropboxのアプリの設定を行います。
 * アクセストークン：APIにアクセスするアクセストークン
+
+※Dropbox Business の Advanced または Enterprise プランが必要です。
 #### Google
 APIにアクセスするプロジェクトのサービスアカウントの設定を行います。
 * クライアントID：サービスアカウントのクライアントID
 * メールアドレス：サービスアカウントのメールアドレス
 * 秘密鍵：サービスアカウントの秘密鍵
+
+(アクティビティログ)
+
+※以下のスコープをサービスアカウントに割り当てます。
+* https://www.googleapis.com/auth/admin.reports.audit.readonly
+
+※プロジェクトで以下のAPIを有効にします。
+* Reports API
+
+(セキュリティチェック)
+
+※以下のスコープをサービスアカウントに割り当てます。
+* https://www.googleapis.com/auth/cloud-platform
+
+※プロジェクトで以下のAPIを有効にします。
+* Cloud Resource Manager API
+* Compute Engine API
+* Kubernetes Engine API
 #### LINE WORKS
 APIの設定を行います。
 * Tenant ID：Tenant ID
